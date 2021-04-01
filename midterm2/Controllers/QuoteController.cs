@@ -9,22 +9,24 @@ using midterm2.Models;
 
 namespace midterm2.Controllers
 {
-    public class QuoteControlleer : Controller
+    public class QuoteController : Controller
     {
         private readonly QuoteDbContext _context;
 
-        public QuoteControlleer(QuoteDbContext context)
+        public QuoteController(QuoteDbContext context)
         {
             _context = context;
         }
 
-        // GET: QuoteControlleer
+        // GET: index page for quotes
         public async Task<IActionResult> Index()
         {
             return View(await _context.Quotes.ToListAsync());
         }
 
-        // GET: QuoteControlleer/Details/5
+
+
+        // GET: shows details for the quote
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -42,13 +44,13 @@ namespace midterm2.Controllers
             return View(quote);
         }
 
-        // GET: QuoteControlleer/Create
+        // GET: creates quotes
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: QuoteControlleer/Create
+        // POST: creates quotes from form
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -64,7 +66,7 @@ namespace midterm2.Controllers
             return View(quote);
         }
 
-        // GET: QuoteControlleer/Edit/5
+        // GET: edits quotes get
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -80,7 +82,7 @@ namespace midterm2.Controllers
             return View(quote);
         }
 
-        // POST: QuoteControlleer/Edit/5
+        // POST: edits quotes post
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -115,7 +117,7 @@ namespace midterm2.Controllers
             return View(quote);
         }
 
-        // GET: QuoteControlleer/Delete/5
+        // GET: get for deleting quotes
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -133,7 +135,7 @@ namespace midterm2.Controllers
             return View(quote);
         }
 
-        // POST: QuoteControlleer/Delete/5
+        // POST: post  for deleting quotes
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

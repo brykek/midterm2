@@ -1,8 +1,20 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿
+
+@model IEnumerable<midterm2.Models.Quote>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h1>Welcome to the Best Quotes</h1>
+
+<p>Click <a asp-controller="Quote" asp-action="Index">here</a> to see our favorite quotes</p>
+
+<p>Click <a asp-controller="Quote" asp-action="Create">here</a> to add your own favorite to our list!</p>
+
+
+@*@foreach (var x in Model)
+            {
+                <p>@x.QuoteText</p>
+            }*@

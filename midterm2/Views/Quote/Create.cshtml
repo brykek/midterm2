@@ -2,9 +2,9 @@
 
 @{
     ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
 
 <h4>Quote</h4>
 <hr />
@@ -13,27 +13,32 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="QuoteText" class="control-label"></label>
+                <label asp-for="QuoteText" class="control-label">Quote</label>
                 <input asp-for="QuoteText" class="form-control" />
                 <span asp-validation-for="QuoteText" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Author" class="control-label"></label>
-                <input asp-for="Author" class="form-control" />
-                <span asp-validation-for="Author" class="text-danger"></span>
+                <label asp-for="AuthorFirstName" class="control-label">Author's First Name</label>
+                <input asp-for="AuthorFirstName" class="form-control" />
+                <span asp-validation-for="AuthorFirstName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Date" class="control-label"></label>
+                <label asp-for="AuthorLastName" class="control-label">Author's Last Name</label>
+                <input asp-for="AuthorLastName" class="form-control" />
+                <span asp-validation-for="AuthorLastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date" class="control-label">Date</label>
                 <input asp-for="Date" class="form-control" />
                 <span asp-validation-for="Date" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Subject" class="control-label"></label>
+                <label asp-for="Subject" class="control-label">Subject</label>
                 <input asp-for="Subject" class="form-control" />
                 <span asp-validation-for="Subject" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Citation" class="control-label"></label>
+                <label asp-for="Citation" class="control-label">Citation</label>
                 <input asp-for="Citation" class="form-control" />
                 <span asp-validation-for="Citation" class="text-danger"></span>
             </div>

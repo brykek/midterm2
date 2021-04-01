@@ -2,9 +2,8 @@
 
 @{
     ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h1>Edit</h1>
 
 <h4>Quote</h4>
 <hr />
@@ -14,14 +13,19 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="QuoteID" />
             <div class="form-group">
-                <label asp-for="QuoteText" class="control-label"></label>
+                <label asp-for="QuoteText" class="control-label">Quote</label>
                 <input asp-for="QuoteText" class="form-control" />
                 <span asp-validation-for="QuoteText" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Author" class="control-label"></label>
-                <input asp-for="Author" class="form-control" />
-                <span asp-validation-for="Author" class="text-danger"></span>
+                <label asp-for="AuthorFirstName" class="control-label">Author's First Name</label>
+                <input asp-for="AuthorFirstName" class="form-control" />
+                <span asp-validation-for="AuthorFirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AuthorLastName" class="control-label">Author's Last Name</label>
+                <input asp-for="AuthorLastName" class="form-control" />
+                <span asp-validation-for="AuthorLastName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Date" class="control-label"></label>
